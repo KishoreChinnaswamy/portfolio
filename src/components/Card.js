@@ -72,13 +72,17 @@ const projects = [
 export default function Card() {
   return (
     <Grid container>
-      <Grid item xs={12} sx={{ paddingLeft: "3% !important" }}>
+      <Grid
+        item
+        xs={12}
+        sx={{ paddingLeft: "3% !important", paddingTop: "2% !important" }}
+      >
         <Typography className="slide-in slide-from-left">Projects</Typography>
       </Grid>
 
       {projects.map((project) => {
         return (
-          <div style={{ padding: "5%" }}>
+          <div style={{ padding: "5%", paddingTop: "2%" }}>
             <div class="card">
               <div class="upper-part">
                 <div class="upper-part-face">{project.description}</div>
@@ -90,8 +94,8 @@ export default function Card() {
                         label={skill}
                         style={{
                           // width: "50px",
-                          color: "#49b5bc",
-                          borderColor: "#49b5bc",
+                          color: "#23e5e7",
+                          borderColor: "#23e5e7",
                           margin: "4px",
                         }}
                       />

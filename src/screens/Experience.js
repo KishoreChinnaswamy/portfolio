@@ -1,6 +1,8 @@
 import React from "react";
 import { Grid, Typography, Chip } from "@mui/material";
 
+import robot from "../assets/robot_align.png";
+
 export default function Experience() {
   const experiences = [
     {
@@ -46,20 +48,60 @@ export default function Experience() {
   //   setShouldAnimate(true);
   // }, []);
   return (
-    <div>
-      <Grid container>
-        <Grid item xs={12} sx={{ paddingLeft: "3% !important" }}>
-          <Typography
-            // className={`slide-from-left ${
-            //   shouldParagraphAnimate ? "slide-in" : ""
-            // }`}
-            className="slide-in slide-from-left"
-          >
-            Experience
-          </Typography>
-        </Grid>
+    <div className="image-container">
+      <img src={robot} alt="" style={{ width: "100%" }} />
+      <div class="top-left">
+        <div style={{ display: "flex" }}>
+          <div style={{ width: "100%" }}>
+            <Grid container>
+              <Grid
+                item
+                xs={12}
+                direction="column"
+                display="flex"
+                // justifyContent="center"
+                textAlign="left"
+                paddingLeft={5}
+              >
+                <Typography className="name-header">Hi, my name is </Typography>
+                <Typography className="name-title">
+                  Kishore Chinnaswamy.
+                </Typography>
+                <Typography className="name-sub-title">
+                  I build things for the web and beyond.
+                </Typography>
+              </Grid>
+              <Grid item xs={12} paddingLeft={5} textAlign="left">
+                <Typography
+                  className="name-header"
+                  sx={{ color: "#23e5e7 !important" }}
+                  fontFamily="monospace"
+                >
+                  Passionate about creating beautiful and functional
+                  applications.
+                </Typography>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                sx={{
+                  paddingLeft: "3% !important",
+                  paddingTop: "2% !important",
+                }}
+              >
+                <Typography
+                  textAlign="left"
+                  sx={{ color: "#23e5e7 !important" }}
+                  // className={`slide-from-left ${
+                  //   shouldParagraphAnimate ? "slide-in" : ""
+                  // }`}
+                  className="slide-in slide-from-left"
+                >
+                  Experience
+                </Typography>
+              </Grid>
 
-        {/* {experiences?.map((experience) => {
+              {/* {experiences?.map((experience) => {
           return (
             <Grid
               item
@@ -126,44 +168,58 @@ export default function Experience() {
           );
         })} */}
 
-        {experiences?.map((experience) => {
-          return (
-            <div style={{ padding: "5%" }}>
-              <div class="card">
-                <div class="upper-part">
-                  <div class="upper-part-face">{experience.description}</div>
-                  <div class="upper-part-back">
-                    <div>
-                      {experience.skills.map((skill) => (
-                        <Chip
-                          variant="outlined"
-                          label={skill}
-                          style={{
-                            // width: "50px",
-                            color: "#49b5bc",
-                            borderColor: "#49b5bc",
-                            margin: "4px",
-                          }}
-                        />
-                      ))}
+              {experiences?.map((experience) => {
+                return (
+                  <div style={{ padding: "5%", paddingTop: "4%" }}>
+                    <div class="card">
+                      <div class="upper-part">
+                        <div class="upper-part-face">
+                          {experience.description}
+                        </div>
+                        <div class="upper-part-back">
+                          <div>
+                            {experience.skills.map((skill) => (
+                              <Chip
+                                variant="outlined"
+                                label={skill}
+                                style={{
+                                  // width: "50px",
+                                  color: "#23e5e7",
+                                  borderColor: "#23e5e7",
+                                  margin: "4px",
+                                }}
+                              />
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                      <div class="lower-part">
+                        <div class="lower-part-face">
+                          <div style={{ textAlign: "center" }}>
+                            <Typography sx={{ color: "#23e5e7" }}>
+                              {experience.label}
+                            </Typography>
+                            <Typography sx={{ color: "#23e5e7" }}>
+                              {experience.organization}
+                            </Typography>
+                            <Typography sx={{ color: "#23e5e7" }}>
+                              {experience.duration}
+                            </Typography>
+                          </div>
+                        </div>
+                        <div class="lower-part-back">Skills</div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="lower-part">
-                  <div class="lower-part-face">
-                    <div style={{ textAlign: "center" }}>
-                      <Typography>{experience.label}</Typography>
-                      <Typography>{experience.organization}</Typography>
-                      <Typography>{experience.duration}</Typography>
-                    </div>
-                  </div>
-                  <div class="lower-part-back">Skills</div>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </Grid>
+                );
+              })}
+            </Grid>
+          </div>
+          {/* <div style={{ width: "30%" }}>
+        <img src={robot} alt="" style={{ width: "100%" }} />
+      </div> */}
+        </div>
+      </div>
     </div>
   );
 }

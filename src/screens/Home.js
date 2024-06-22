@@ -19,7 +19,11 @@ export default function Home() {
         </Typography>
       </Grid>
       <Grid item xs={12} paddingLeft={5}>
-        <Typography color="white" fontFamily="monospace">
+        <Typography
+          className="name-header"
+          sx={{ color: "#23e5e7 !important" }}
+          fontFamily="monospace"
+        >
           Passionate about creating beautiful and functional applications.
         </Typography>
       </Grid>
