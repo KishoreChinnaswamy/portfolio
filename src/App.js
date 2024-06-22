@@ -8,13 +8,7 @@ import robot from "./assets/robot_align.png";
 function App() {
   return (
     <>
-      {/* <div className="image-container">
-        <img src={topImage} alt="" style={{ width: "100%" }} />
-        <div class="bottom-right">Bottom Right</div>
-      </div> */}
-      {/* <img src={robot} alt="" /> */}
       <Appbar />
-      {/* <Home /> */}
       <Experience />
       <Card />
     </>

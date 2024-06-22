@@ -77,12 +77,17 @@ export default function Card() {
         xs={12}
         sx={{ paddingLeft: "3% !important", paddingTop: "2% !important" }}
       >
-        <Typography className="slide-in slide-from-left">Projects</Typography>
+        <Typography
+          sx={{ color: "#e2ec4b !important" }}
+          className="slide-in slide-from-left"
+        >
+          Projects
+        </Typography>
       </Grid>
 
       {projects.map((project) => {
         return (
-          <div style={{ padding: "5%", paddingTop: "2%" }}>
+          <div style={{ padding: "5%", paddingTop: "4%" }}>
             <div class="card">
               <div class="upper-part">
                 <div class="upper-part-face">{project.description}</div>

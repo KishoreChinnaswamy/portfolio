@@ -91,7 +91,7 @@ export default function Experience() {
               >
                 <Typography
                   textAlign="left"
-                  sx={{ color: "#23e5e7 !important" }}
+                  sx={{ color: "#e2ec4b !important" }}
                   // className={`slide-from-left ${
                   //   shouldParagraphAnimate ? "slide-in" : ""
                   // }`}

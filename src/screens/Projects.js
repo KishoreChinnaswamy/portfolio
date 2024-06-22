@@ -80,7 +80,12 @@ export default function Projects() {
     <div>
       <Grid container padding={2} paddingLeft={5}>
         <Grid item xs={12}>
-          <Typography className="slide-in slide-from-left">Projects</Typography>
+          <Typography
+            // className="slide-in slide-from-left"
+            sx={{ color: "#e2ec4b" }}
+          >
+            Projects
+          </Typography>
         </Grid>
 
         {experiences?.map((experience) => {
