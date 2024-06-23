@@ -1,16 +1,29 @@
-import Appbar from "./components/Appbar";
-import Home from "./screens/Home";
-import Experience from "./screens/Experience";
-import Card from "./components/Card";
+import { useRef } from "react";
 
-import robot from "./assets/robot_align.png";
+import Appbar from "./components/Appbar";
+import Experience from "./screens/Experience";
+import Projects from "./components/Projects";
 
 function App() {
+  const experienceRef = useRef(null);
+  const projectsRef = useRef(null);
+
+  const handleScrollToExperience = () => {
+    experienceRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleScrollToProjects = () => {
+    projectsRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
-      <Appbar />
-      <Experience />
-      <Card />
+      <Appbar
+        onExperienceClick={handleScrollToExperience}
+        onProjectClick={handleScrollToProjects}
+      />
+      <Experience ref={experienceRef} />
+      <Projects ref={projectsRef} />
     </>
   );
 }

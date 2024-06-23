@@ -10,7 +10,7 @@ import {
 
 import topImage from "../assets/top.png";
 
-export default function Appbar() {
+export default function Appbar({ onExperienceClick, onProjectClick }) {
   return (
     // <Box sx={{ flexGrow: 1 }}>
     //   <AppBar
@@ -59,15 +59,15 @@ export default function Appbar() {
           <MenuItem className="menuItem" sx={{ color: "#e2ec4b" }}>
             <span className="menu-item-span">01. </span>About
           </MenuItem>
-          <MenuItem sx={{ color: "#e2ec4b" }}>
+          <MenuItem sx={{ color: "#e2ec4b" }} onClick={onExperienceClick}>
             <span className="menu-item-span">02. </span> Experience
           </MenuItem>
-          <MenuItem sx={{ color: "#e2ec4b" }}>
+          <MenuItem sx={{ color: "#e2ec4b" }} onClick={onProjectClick}>
             <span className="menu-item-span">03. </span> Projects
           </MenuItem>
-          <MenuItem sx={{ color: "#e2ec4b" }}>
+          {/* <MenuItem sx={{ color: "#e2ec4b" }}>
             <span className="menu-item-span">04. </span> Contact
-          </MenuItem>
+          </MenuItem> */}
         </Box>
       </div>
     </div>

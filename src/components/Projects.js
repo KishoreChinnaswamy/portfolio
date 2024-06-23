@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import "./Card.css";
 import { Chip, Grid, Typography } from "@mui/material";
 
@@ -69,7 +69,7 @@ const projects = [
   },
 ];
 
-export default function Card() {
+const Projects = forwardRef((props, ref) => {
   return (
     <Grid container>
       <Grid
@@ -78,6 +78,7 @@ export default function Card() {
         sx={{ paddingLeft: "3% !important", paddingTop: "2% !important" }}
       >
         <Typography
+          ref={ref}
           sx={{ color: "#e2ec4b !important" }}
           className="slide-in slide-from-left"
         >
@@ -118,4 +119,6 @@ export default function Card() {
       })}
     </Grid>
   );
-}
+});
+
+export default Projects;

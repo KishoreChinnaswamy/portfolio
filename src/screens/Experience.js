@@ -1,9 +1,9 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { Grid, Typography, Chip } from "@mui/material";
 
 import robot from "../assets/robot_align.png";
 
-export default function Experience() {
+const Experience = forwardRef((props, ref) => {
   const experiences = [
     {
       label: "Front-end Developer",
@@ -90,6 +90,7 @@ export default function Experience() {
                 }}
               >
                 <Typography
+                  ref={ref}
                   textAlign="left"
                   sx={{ color: "#e2ec4b !important" }}
                   // className={`slide-from-left ${
@@ -222,4 +223,6 @@ export default function Experience() {
       </div>
     </div>
   );
-}
+});
+
+export default Experience;
