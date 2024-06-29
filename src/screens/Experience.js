@@ -179,8 +179,8 @@ const Experience = forwardRef((props, ref) => {
                 container
                 xs={12}
                 spacing={2}
-                paddingLeft="10px"
-                paddingTop="16px"
+                className="grid-item"
+                paddingTop="40px"
               >
                 {experiences?.map((experience) => {
                   return (

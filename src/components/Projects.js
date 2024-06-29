@@ -91,8 +91,8 @@ const Projects = forwardRef((props, ref) => {
         container
         xs={12}
         spacing={2}
-        paddingLeft="10px"
-        paddingTop="16px"
+        paddingTop="40px"
+        className="grid-item"
       >
         {projects.map((project) => {
           return (

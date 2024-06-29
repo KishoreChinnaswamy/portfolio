@@ -103,6 +103,10 @@ code {
   left: 16px;
 }
 
+.grid-item {
+  padding-left: 4%;
+}
+
 @media only screen and (max-width: 1100px) {
   .bottom-right {
     display: none;
@@ -122,7 +126,7 @@ code {
     display: none;
   }
 
-  body {
-    padding: "10%";
+  .grid-item {
+    padding-left: 16px;
   }
 }
