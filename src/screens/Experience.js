@@ -49,7 +49,12 @@ const Experience = forwardRef((props, ref) => {
   // }, []);
   return (
     <div className="image-container">
-      <img src={robot} alt="" style={{ width: "100%" }} />
+      <img
+        className="projects-image"
+        src={robot}
+        alt=""
+        style={{ width: "100%" }}
+      />
       <div class="top-left">
         <div style={{ display: "flex" }}>
           <div style={{ width: "100%" }}>
@@ -169,51 +174,62 @@ const Experience = forwardRef((props, ref) => {
           );
         })} */}
 
-              {experiences?.map((experience) => {
-                return (
-                  <div style={{ padding: "5%", paddingTop: "4%" }}>
-                    <div class="card">
-                      <div class="upper-part">
-                        <div class="upper-part-face">
-                          {experience.description}
-                        </div>
-                        <div class="upper-part-back">
-                          <div>
-                            {experience.skills.map((skill) => (
-                              <Chip
-                                variant="outlined"
-                                label={skill}
-                                style={{
-                                  // width: "50px",
-                                  color: "#23e5e7",
-                                  borderColor: "#23e5e7",
-                                  margin: "4px",
-                                }}
-                              />
-                            ))}
+              <Grid
+                item
+                container
+                xs={12}
+                spacing={2}
+                paddingLeft="10px"
+                paddingTop="16px"
+              >
+                {experiences?.map((experience) => {
+                  return (
+                    <Grid item xs={12} sm={6} lg={4} padding={8}>
+                      <div>
+                        <div class="card">
+                          <div class="upper-part">
+                            <div class="upper-part-face">
+                              {experience.description}
+                            </div>
+                            <div class="upper-part-back">
+                              <div>
+                                {experience.skills.map((skill) => (
+                                  <Chip
+                                    variant="outlined"
+                                    label={skill}
+                                    style={{
+                                      // width: "50px",
+                                      color: "#23e5e7",
+                                      borderColor: "#23e5e7",
+                                      margin: "4px",
+                                    }}
+                                  />
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                          <div class="lower-part">
+                            <div class="lower-part-face">
+                              <div style={{ textAlign: "center" }}>
+                                <Typography sx={{ color: "#23e5e7" }}>
+                                  {experience.label}
+                                </Typography>
+                                <Typography sx={{ color: "#23e5e7" }}>
+                                  {experience.organization}
+                                </Typography>
+                                <Typography sx={{ color: "#23e5e7" }}>
+                                  {experience.duration}
+                                </Typography>
+                              </div>
+                            </div>
+                            <div class="lower-part-back">Skills</div>
                           </div>
                         </div>
                       </div>
-                      <div class="lower-part">
-                        <div class="lower-part-face">
-                          <div style={{ textAlign: "center" }}>
-                            <Typography sx={{ color: "#23e5e7" }}>
-                              {experience.label}
-                            </Typography>
-                            <Typography sx={{ color: "#23e5e7" }}>
-                              {experience.organization}
-                            </Typography>
-                            <Typography sx={{ color: "#23e5e7" }}>
-                              {experience.duration}
-                            </Typography>
-                          </div>
-                        </div>
-                        <div class="lower-part-back">Skills</div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
+                    </Grid>
+                  );
+                })}
+              </Grid>
             </Grid>
           </div>
           {/* <div style={{ width: "30%" }}>

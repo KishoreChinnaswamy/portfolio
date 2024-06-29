@@ -86,37 +86,48 @@ const Projects = forwardRef((props, ref) => {
         </Typography>
       </Grid>
 
-      {projects.map((project) => {
-        return (
-          <div style={{ padding: "5%", paddingTop: "4%" }}>
-            <div class="card">
-              <div class="upper-part">
-                <div class="upper-part-face">{project.description}</div>
-                <div class="upper-part-back">
-                  <div>
-                    {project.skills.map((skill) => (
-                      <Chip
-                        variant="outlined"
-                        label={skill}
-                        style={{
-                          // width: "50px",
-                          color: "#23e5e7",
-                          borderColor: "#23e5e7",
-                          margin: "4px",
-                        }}
-                      />
-                    ))}
+      <Grid
+        item
+        container
+        xs={12}
+        spacing={2}
+        paddingLeft="10px"
+        paddingTop="16px"
+      >
+        {projects.map((project) => {
+          return (
+            <Grid item xs={12} sm={6} lg={4} padding={8}>
+              <div>
+                <div class="card">
+                  <div class="upper-part">
+                    <div class="upper-part-face">{project.description}</div>
+                    <div class="upper-part-back">
+                      <div>
+                        {project.skills.map((skill) => (
+                          <Chip
+                            variant="outlined"
+                            label={skill}
+                            style={{
+                              // width: "50px",
+                              color: "#23e5e7",
+                              borderColor: "#23e5e7",
+                              margin: "4px",
+                            }}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="lower-part">
+                    <div class="lower-part-face">{project.label}</div>
+                    <div class="lower-part-back">Skills</div>
                   </div>
                 </div>
               </div>
-              <div class="lower-part">
-                <div class="lower-part-face">{project.label}</div>
-                <div class="lower-part-back">Skills</div>
-              </div>
-            </div>
-          </div>
-        );
-      })}
+            </Grid>
+          );
+        })}
+      </Grid>
     </Grid>
   );
 });
