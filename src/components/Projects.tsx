@@ -1,8 +1,14 @@
 import React, { forwardRef } from "react";
+import { Grid, Typography, Chip } from "@mui/material";
 import "./Card.css";
-import { Chip, Grid, Typography } from "@mui/material";
 
-const projects = [
+interface ProjectProps {
+  label: string;
+  description: string;
+  skills: string[];
+}
+
+const projects: ProjectProps[] = [
   {
     label: "Revolution Picture Cars",
     description:
@@ -69,7 +75,7 @@ const projects = [
   },
 ];
 
-const Projects = forwardRef((props, ref) => {
+const Projects = forwardRef<HTMLDivElement>((_, ref) => {
   return (
     <Grid container>
       <Grid
@@ -96,12 +102,12 @@ const Projects = forwardRef((props, ref) => {
       >
         {projects.map((project) => {
           return (
-            <Grid item xs={12} sm={6} lg={4} padding={8}>
+            <Grid key={project.label} item xs={12} sm={6} lg={4} padding={8}>
               <div>
-                <div class="card">
-                  <div class="upper-part">
-                    <div class="upper-part-face">{project.description}</div>
-                    <div class="upper-part-back">
+                <div className="card">
+                  <div className="upper-part">
+                    <div className="upper-part-face">{project.description}</div>
+                    <div className="upper-part-back">
                       <div>
                         {project.skills.map((skill) => (
                           <Chip
@@ -118,9 +124,9 @@ const Projects = forwardRef((props, ref) => {
                       </div>
                     </div>
                   </div>
-                  <div class="lower-part">
-                    <div class="lower-part-face">{project.label}</div>
-                    <div class="lower-part-back">Skills</div>
+                  <div className="lower-part">
+                    <div className="lower-part-face">{project.label}</div>
+                    <div className="lower-part-back">Skills</div>
                   </div>
                 </div>
               </div>
