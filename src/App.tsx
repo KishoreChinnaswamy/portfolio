@@ -5,15 +5,19 @@ import Experience from "./screens/Experience";
 import Projects from "./components/Projects";
 
 function App() {
-  const experienceRef = useRef(null);
-  const projectsRef = useRef(null);
+  const experienceRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
 
   const handleScrollToExperience = () => {
-    experienceRef.current.scrollIntoView({ behavior: "smooth" });
+    if (experienceRef.current) {
+      experienceRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const handleScrollToProjects = () => {
-    projectsRef.current.scrollIntoView({ behavior: "smooth" });
+    if (projectsRef.current) {
+      projectsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -22,8 +26,12 @@ function App() {
         onExperienceClick={handleScrollToExperience}
         onProjectClick={handleScrollToProjects}
       />
-      <Experience ref={experienceRef} />
-      <Projects ref={projectsRef} />
+      <div ref={experienceRef}>
+        <Experience />
+      </div>
+      <div ref={projectsRef}>
+        <Projects />
+      </div>
     </>
   );
 }
